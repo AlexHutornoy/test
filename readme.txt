@@ -1,10 +1,10 @@
-через cmd перейти в папку с проектом
+С‡РµСЂРµР· cmd РїРµСЂРµР№С‚Рё РІ РїР°РїРєСѓ СЃ РїСЂРѕРµРєС‚РѕРј
 env\Scripts\activate
 cd tests
 python manage.py runserver
 http://127.0.0.1:8000/news
 http://127.0.0.1:8000/admin
 
-в админке
-логин admin
-пароль adminadmin
+РІ Р°РґРјРёРЅРєРµ
+Р»РѕРіРёРЅ admin
+РїР°СЂРѕР»СЊ adminadmin
