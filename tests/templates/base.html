@@ -1,0 +1,59 @@
+<html>
+{% load staticfiles %}
+<head>
+	<link rel= "stylesheet" href="{% static "bootstrap.min.css" %}">
+	<meta charset="utf-8">
+	<title>
+		Главная
+	</title>
+</head>
+<body>
+
+
+	<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">логотип</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Контакты</a></li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<select class="pull-left" id="my_select">
+  <option value=1>все новости</option>
+  <option value=2>habrahabr.ru </option>
+  <option value=3>maduza.io</option>
+  <option value=4>lenta.ru</option>
+</select>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-xs-12 col-sm-10">
+  {% block content%}
+  {%endblock%}
+
+    </div>
+
+  </div>
+</div>
+
+<script src="{% static "jquery-2.2.3.min.js"%}"></script>
+<script src="{% static "bootstrap.min.js"%}"></script>
+<script src="{% static "select.js"%}"></script>
+
+</body>
+</html>

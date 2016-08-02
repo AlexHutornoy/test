@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}	
+
+	{% for news in News %}
+
+		<div class="jumbotron {{news.source}}">
+	
+
+		<p>
+
+			<span >
+				<small>{{news.tittle}}</small>
+			</span>	
+
+			<span class="pull-right">
+				<small><small>{{news.dateAdd}}</small></small>
+			</span>
+		</p>
+		
+		<p>
+		<img src= "{{news.image.url}}" class="img-responsive center-block">
+		</p>
+		<p>
+			{{news.shortDef}}
+		</p>
+		
+		<p>
+			<small>
+			<small>
+				Источник: {{news.source}}
+			</small>
+			</small>
+		</p>
+			
+
+
+
+		</div>
+		
+	{% endfor %}
+{% endblock %}
