@@ -9,20 +9,21 @@
 
 		<p>
 
-			<span >
-				<small>{{news.tittle}}</small>
-			</span>	
-
+			
+				
+					<a href="{% url 'about' pk=news.id %}">{{news.tittle}}</a>
+				
+			
 			<span class="pull-right">
 				<small><small>{{news.dateAdd}}</small></small>
 			</span>
 		</p>
-		
+	
 		<p>
 		<img src= "{{news.image.url}}" class="img-responsive center-block">
 		</p>
 		<p>
-			{{news.shortDef}}
+			{{news.fullDef|truncatechars:200}}
 		</p>
 		
 		<p>
@@ -39,4 +40,6 @@
 		</div>
 		
 	{% endfor %}
+
+
 {% endblock %}

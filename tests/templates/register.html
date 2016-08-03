@@ -32,37 +32,7 @@
   </div>
 </nav>
 <ul class="nav nav-pills nav-stacked pull-left" style="margin-left:5px">
-  <li>
-      {%if request.user.username %}
-        <div>Здравствуйте, {{request.user.username}}!</div><a href= "/logout/">Выйти</a>
-        {% if request.user.is_superuser %}
-          <a href="/admin/">Админка</a>
-          <br>
-        {% endif %}
-
-      {%else%}
-      
-        <form action="/base_login/" method="post">{% csrf_token %}
-            <input type="text" name="username" placeholder="username"> <br>
-            <input type="password" name="password" placeholder="password">
-           <br>
-        <input type="submit" value = "Войти"><br>
-        <input type = "submit" formaction = "/register/" value="Регистрация">
-        </form>
-
-      {%endif%}
-  </li>
-  <li>
-    Источник
-  </li>
-  <li>
-<select class="" id="my_select">
-  <option value=1>все новости</option>
-  <option value=2>habrahabr.ru </option>
-  <option value=3>maduza.io</option>
-  <option value=4>lenta.ru</option>
-</select>
-  </li>
+ 
 
 </ul>
 
@@ -72,6 +42,13 @@
 
     <div class="col-xs-12 col-sm-10">
   {% block content%}
+
+    <form action="" method="post">
+      {% csrf_token %}
+      <!-- as_p для того, чтобы каждый элемент формы был с новой строки -->
+      {{ form.as_p }}
+      <button type="submit">Регистрация</button>
+    </form>
   {%endblock%}
 
     </div>

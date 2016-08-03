@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load comments %}
+
+{% block content %}	
+<div class = "jumbotron">
+<p>
+	{{news.tittle}}	
+		<span class="pull-right">
+				<small><small>{{news.dateAdd}}</small></small>
+			</span>
+</p>
+	<img src= "{{news.image.url}}" class="img-responsive center-block">
+	<br>
+<p>
+	<small>
+	{{news.fullDef}}
+</small>
+</p>
+<p>
+
+	<small>
+	<small>
+		Источник: {{news.source}}
+	</small>
+	</small>
+</p>
+
+
+
+</div>
+
+<div class="jumbotron">
+
+{% render_comment_list for news%}
+<br>
+{% if user.is_authenticated %}
+    {% get_comment_form for news as form %}
+    <form action="{% comment_form_target %}" method="POST">
+    {% csrf_token %}
+    {{ form.comment }}
+    {{ form.content_type }}
+    {{ form.object_pk }}
+    {{ form.timestamp }}
+    {{ form.security_hash }}
+    <br>
+    <input type="hidden" name="next" value="{% url 'about' pk=news.id %}" />
+
+
+    <input type="submit" value="Отправить" id="id_submit" />
+    </form>
+{% else %}
+    <p> <a href="#">Войдите</a> чтобы оставлять коментарии</p>
+{% endif %}</div>
+{% endblock %}

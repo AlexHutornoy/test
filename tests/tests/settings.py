@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from django_feedparser import *
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,6 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django_comments',
+
+
+    'django_feedparser',
+
     'news',
 ]
 
@@ -136,3 +145,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 SITE_ID = 1
+
+DISQUS_API_KEY = '***'
+DISQUS_WEBSITE_SHORTNAME = '***'
