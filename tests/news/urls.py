@@ -3,6 +3,9 @@ from django.conf.urls import patterns, url
 
 from . import views
 
+
+# -*- coding: utf-8 -*-
+
 urlpatterns = [
 	url(r'^$', views.index, name='index'),    
 	url(r'^register/$', views.RegisterFormView.as_view()),

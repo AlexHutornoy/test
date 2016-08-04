@@ -15,6 +15,7 @@ from django_feedparser import *
 
 
 
+# -*- coding: utf-8 -*-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -30,7 +31,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django_comments',
 
-
-    'django_feedparser',
 
     'news',
 ]
@@ -114,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-Ru'
 
 TIME_ZONE = 'UTC'
 
@@ -145,6 +143,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 SITE_ID = 1
-
-DISQUS_API_KEY = '***'
-DISQUS_WEBSITE_SHORTNAME = '***'
